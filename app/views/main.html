@@ -9,9 +9,33 @@
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
     </head>
     <body>
-        #{doLayout /}
+        <div id="header">
+            <div id="logo">
+                yabe.
+            </div>
+            <ul id="tools">
+                <li>
+                    <a href="#">Log in to write something</a>
+                </li>
+            </ul>
+            <div id="title">
+                <span class="about">About this blog</span>
+                <h1><a href="#">${blogTitle}</a></h1>
+                <h2>${blogBaseline}</h2>
+            </div>
+        </div>
         
-        <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        #{get 'moreScripts' /}
+        <div id="main">
+            #{doLayout /} 
+        </div>
+        
+        <p id="footer">
+            Yabe is a (not that) powerful blog engine built with the 
+            <a href="https://www.playframework.com">Play framework</a>
+            as a tutorial application.
+        </p>
+        
+        <!-- <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        #{get 'moreScripts' /} -->
     </body>
 </html>
