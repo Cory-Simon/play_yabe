@@ -29,10 +29,10 @@ public class Post extends Model {
     }
     
     public Post addComment(String author, String content) {
-    	//Comment newComment = new Comment(this, author, content).save();
-    	//this.comments.add(newComment);
+    	Comment newComment = new Comment(this, author, content).save();
+    	this.comments.add(newComment);
     	//TODO: Combine above 2 lines into single statement
-    	this.comments.add(new Comment(this, author, content).save()); //A bit messy?
+    	//this.comments.add(new Comment(this, author, content).save()); //A bit messy?
     	
     	this.save();
     	return this;
