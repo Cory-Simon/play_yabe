@@ -1,5 +1,9 @@
 /tmp
 /modules
 /lib
-/test-results
+/test-result
 /logs
+/eclipse
+.classpath
+.project
+.settings/
