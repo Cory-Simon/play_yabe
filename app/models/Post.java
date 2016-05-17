@@ -1,6 +1,8 @@
 package models;
 
 import play.*;
+
+import play.data.validation.*;
 import play.db.jpa.*;
 
 import javax.persistence.*;
@@ -8,12 +10,19 @@ import java.util.*;
 
 @Entity
 public class Post extends Model {
+
+    @Required
     public String title;
+
+    @Required
     public Date postedAt;
     
     @Lob
+    @Required
+    @MaxSize(10000)
     public String content;
     
+    @Required
     @ManyToOne
     public User author;
     
@@ -37,6 +46,7 @@ public class Post extends Model {
     	this.comments.add(newComment);
     	//TODO: Combine above 2 lines into single statement
     	//this.comments.add(new Comment(this, author, content).save()); //A bit messy?
+        //freaked out when I moved to IntelliJ
     	
     	this.save();
     	return this;
