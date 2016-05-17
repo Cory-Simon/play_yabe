@@ -17,8 +17,12 @@ GET     /captcha                                Application.captcha
 #Tags
 GET     /posts/{tag}                            Application.listTagged
 
-# Import CRUD routes
+# Administration
+GET     /admin/?                                Admin.index
 *      /admin                                   module:crud
+
+# Import secure routes
+*       /                                       module:secure
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
