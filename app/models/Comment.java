@@ -23,4 +23,8 @@ public class Comment extends Model {
     	this.content = content;
     	this.postedAt = new Date();
     }
+
+    public String toString() {
+        return postedAt + " by " +author + " on " + post;
+    }
 }
